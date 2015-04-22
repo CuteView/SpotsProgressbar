@@ -9,9 +9,12 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.View;
 import android.widget.FrameLayout;
 
 public class SpotsProgressbar extends FrameLayout {
+    private final String TAG = "SpotsProgressbar";
 
     /**
      * the default number of Spot
@@ -55,12 +58,13 @@ public class SpotsProgressbar extends FrameLayout {
     /**
      * SpotAnimatedView that SpotsProgressbar contain
      */
-    private SpotAnimatedView[] spots;
+    private SpotAnimatedView[] mSpotViews;
 
     /**
      * Animator that SpotAnimatedView combine
      */
-    private Animator[] animators;
+    private Animator[] mAnimators;
+    private AnimatorSet mAnimatorSet;
 
     private AnimatorListenerAdapter animatorListenerAdapter = new AnimatorListenerAdapter() {
         @Override
@@ -97,8 +101,8 @@ public class SpotsProgressbar extends FrameLayout {
                 defStyleAttr, defStyleRes);
 
         mSpotsCount = a.getInt(R.styleable.SpotsProgressbar_sp_spot_count, DEFAULT_COUNT);
-        mSpotsSize = a.getDimensionPixelSize(R.styleable.SpotsProgressbar_sp_spot_size, 0);
-        if(mSpotsSize == 0) {
+        mSpotsSize = a.getDimensionPixelSize(R.styleable.SpotsProgressbar_sp_spot_size, -1);
+        if(mSpotsSize == -1) {
             mSpotsSize = getContext().getResources().getDimensionPixelSize(R.dimen.sport_progressbar_sport_size);
         }
         mSpotsResId = a.getResourceId(R.styleable.SpotsProgressbar_sp_spot_shape, 0);
@@ -125,8 +129,8 @@ public class SpotsProgressbar extends FrameLayout {
 
     //
     private void initProgress() {
-        if(spots == null) {
-            spots = new SpotAnimatedView[mSpotsCount];
+        if(mSpotViews == null) {
+            mSpotViews = new SpotAnimatedView[mSpotsCount];
         }
         int progressWidth = mWidth;
 
@@ -140,7 +144,7 @@ public class SpotsProgressbar extends FrameLayout {
             v.setTarget(progressWidth);
             v.setXFactor(-1f);
             this.addView(v, mSpotsSize, mSpotsSize); // add view
-            spots[i] = v;
+            mSpotViews[i] = v;
         }
 
         startAnimate();
@@ -148,24 +152,47 @@ public class SpotsProgressbar extends FrameLayout {
 
     // start animate or restart if when animatorListenerAdapter onAnimationEnd() is called.
     private void startAnimate() {
-        if (animators == null) {
-            animators = createAnimations();
+        if (mAnimators == null) {
+            mAnimators = createAnimations();
         }
-        AnimatorSet set = new AnimatorSet();
-        set.playTogether(animators);
-        set.addListener(animatorListenerAdapter);
-        set.start();
+        mAnimatorSet = new AnimatorSet();
+        mAnimatorSet.playTogether(mAnimators);
+        mAnimatorSet.addListener(animatorListenerAdapter);
+        mAnimatorSet.start();
     }
 
     private Animator[] createAnimations() {
         Animator[] animators = new Animator[mSpotsCount];
         for (int i = 0; i < mSpotsCount; i++) {
-            Animator move = ObjectAnimator.ofFloat(spots[i], "xFactor", 0, 1);
+            Animator move = ObjectAnimator.ofFloat(mSpotViews[i], "xFactor", 0, 1);
             move.setDuration(mDuration);
             move.setInterpolator(new DecelerateAccelerateInterpolator());
             move.setStartDelay(mDelay * i);
             animators[i] = move;
         }
         return animators;
+    }
+
+    @Override
+    protected void onVisibilityChanged(View changedView, int visibility) {
+        super.onVisibilityChanged(changedView, visibility);
+        if(isEnabled()) {
+            Log.d(TAG, "isEnabled");
+            if(visibility == View.VISIBLE) {
+                if(mAnimatorSet != null) {
+                    mAnimatorSet.end();
+                    mAnimatorSet.cancel();
+                }
+                if(mSpotViews != null) {
+                    startAnimate();
+                }
+            } else {
+                if(mAnimatorSet != null) {
+                    mAnimatorSet.end();
+                    mAnimatorSet.cancel();
+                }
+            }
+        }
+
     }
 }
