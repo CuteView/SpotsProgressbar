@@ -28,7 +28,7 @@
         android:layout_height="wrap_content" />
 
     <com.deekea.spotsprogressbar.library.SpotsProgressbar
-        sp:SpotCount="3"
+        sp:sp_spot_count="3"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -40,13 +40,13 @@
         android:layout_height="wrap_content" />
 
     <com.deekea.spotsprogressbar.library.SpotsProgressbar
-        sp:SpotShape="@drawable/spot_rec"
+        sp:sp_spot_shape="@drawable/spot_rec"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <com.deekea.spotsprogressbar.library.SpotsProgressbar
-        sp:SpotShape="@drawable/ic_launcher"
+        sp:sp_spot_shape="@drawable/ic_launcher"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -58,8 +58,8 @@
         android:layout_height="wrap_content" />
 
     <com.deekea.spotsprogressbar.library.SpotsProgressbar
-        sp:SpotShape="@drawable/spot_rec"
-        sp:Duration="3000"
+        sp:sp_spot_shape="@drawable/spot_rec"
+        sp:sp_duration="3000"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -71,8 +71,8 @@
         android:layout_height="wrap_content" />
 
     <com.deekea.spotsprogressbar.library.SpotsProgressbar
-        sp:SpotShape="@drawable/spot_rec"
-        sp:Delay="250"
+        sp:sp_spot_shape="@drawable/spot_rec"
+        sp:sp_delay="250"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -84,15 +84,15 @@
         android:layout_height="wrap_content" />
 
     <com.deekea.spotsprogressbar.library.SpotsProgressbar
-        sp:SpotShape="@drawable/spot_rec"
-        sp:SpotShapeSize="12dp"
+        sp:sp_spot_shape="@drawable/spot_rec"
+        sp:sp_spot_size="12dp"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <com.deekea.spotsprogressbar.library.SpotsProgressbar
-        sp:SpotShape="@drawable/ic_launcher"
-        sp:SpotShapeSize="24dp"
+        sp:sp_spot_shape="@drawable/ic_launcher"
+        sp:sp_spot_size="24dp"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

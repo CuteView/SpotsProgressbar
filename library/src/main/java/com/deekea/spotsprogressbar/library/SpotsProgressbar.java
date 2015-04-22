@@ -96,14 +96,14 @@ class SpotsProgressbar extends FrameLayout {
                 R.styleable.SpotsProgressbar,
                 defStyleAttr, defStyleRes);
 
-        mSpotsCount = a.getInt(R.styleable.SpotsProgressbar_SpotCount, DEFAULT_COUNT);
-        mSpotsSize = a.getDimensionPixelSize(R.styleable.SpotsProgressbar_SpotShapeSize, 0);
+        mSpotsCount = a.getInt(R.styleable.SpotsProgressbar_sp_spot_count, DEFAULT_COUNT);
+        mSpotsSize = a.getDimensionPixelSize(R.styleable.SpotsProgressbar_sp_spot_size, 0);
         if(mSpotsSize == 0) {
             mSpotsSize = getContext().getResources().getDimensionPixelSize(R.dimen.sport_progressbar_sport_size);
         }
-        mSpotsResId = a.getResourceId(R.styleable.SpotsProgressbar_SpotShape, 0);
-        mDuration = a.getInt(R.styleable.SpotsProgressbar_Duration, DEFAULT_DURATION);
-        mDelay = a.getInt(R.styleable.SpotsProgressbar_Delay, DEFAULT_DELAY);
+        mSpotsResId = a.getResourceId(R.styleable.SpotsProgressbar_sp_spot_shape, 0);
+        mDuration = a.getInt(R.styleable.SpotsProgressbar_sp_duration, DEFAULT_DURATION);
+        mDelay = a.getInt(R.styleable.SpotsProgressbar_sp_delay, DEFAULT_DELAY);
         a.recycle();
 
     }
