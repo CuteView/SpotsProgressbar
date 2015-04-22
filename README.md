@@ -1,9 +1,9 @@
 # SpotsProgressbar
 A progressbar like win8 but it is horizon.
-
+==================================================================
 ##Current work
   ![current work](./screenshots/first_commition.png)
-  
+==================================================================
 ##Usage
 **Note:** The library requires minimum API level 11.
 
@@ -16,6 +16,7 @@ in layout.xml file
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>
 ```
+==================================================================
 ##Customization
 Provide you own style resource:
 ```xml
@@ -37,9 +38,10 @@ For example to change the spot shape :
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>
-```  
+```
+==================================================================
 ##Thanks
-spots-dialog, https://github.com/d-max/spots-dialog
-ProgressBar, https://github.com/wly2014/ProgressBar
+spots-dialog, https://github.com/d-max/spots-dialog<br>
+ProgressBar, https://github.com/wly2014/ProgressBar<br>
 
 I just pick up some java file from spots-dialog and ProgressBar project and make spotsprogressbar like a view which add anywhere.
