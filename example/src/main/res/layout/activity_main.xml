@@ -1,0 +1,99 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:sp="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:text="Default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.deekea.spotsprogressbar.library.SpotsProgressbar
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:text="Change spot number. Default is 5"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.deekea.spotsprogressbar.library.SpotsProgressbar
+        sp:SpotCount="3"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Change spot shape"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.deekea.spotsprogressbar.library.SpotsProgressbar
+        sp:SpotShape="@drawable/spot_rec"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.deekea.spotsprogressbar.library.SpotsProgressbar
+        sp:SpotShape="@drawable/ic_launcher"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Change anim duration. Default is 1500"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.deekea.spotsprogressbar.library.SpotsProgressbar
+        sp:SpotShape="@drawable/spot_rec"
+        sp:Duration="3000"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Change delay between two spot. Default is 150"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.deekea.spotsprogressbar.library.SpotsProgressbar
+        sp:SpotShape="@drawable/spot_rec"
+        sp:Delay="250"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Change spot size. Default is 6dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.deekea.spotsprogressbar.library.SpotsProgressbar
+        sp:SpotShape="@drawable/spot_rec"
+        sp:SpotShapeSize="12dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.deekea.spotsprogressbar.library.SpotsProgressbar
+        sp:SpotShape="@drawable/ic_launcher"
+        sp:SpotShapeSize="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

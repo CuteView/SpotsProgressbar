@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SpotsProgressbar">
+        <attr name="SpotShape" format="reference"/>
+        <attr name="SpotShapeSize" format="dimension|integer"/>
+        <attr name="SpotCount" format="integer"/>
+        <attr name="Duration" format="integer"/>
+        <attr name="Delay" format="integer"/>
+    </declare-styleable>
+</resources>
