@@ -7,7 +7,7 @@ import android.view.View;
  * Created by Maxim Dybarsky | maxim.dybarskyy@gmail.com
  * on 13.01.15 at 14:17
  */
-class SpotAnimatedView extends View {
+public class SpotAnimatedView extends View {
 
     private int target;
 
