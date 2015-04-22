@@ -11,7 +11,7 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-class SpotsProgressbar extends FrameLayout {
+public class SpotsProgressbar extends FrameLayout {
 
     /**
      * the default number of Spot
