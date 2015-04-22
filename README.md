@@ -2,6 +2,8 @@
 A progressbar like win8 but it is horizon.
 ##Current work
   ![current work](./screenshots/first_commition.png)
+  ![current work](./screenshots/spot_progressbar.gif)
+  ![current work](./screenshots/spot_progressbar2.gif)
   
 ##Usage
 **Note:** The library requires minimum API level 11.
